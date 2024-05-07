@@ -5,12 +5,16 @@ import(
 )
 
 type Node struct{
-
+	Val string
+	Left *Node
+	Right *Node
 }
 
 
 type Queue struct{
-
+	Head *Node
+	Tail *Node
+	Length int
 }
 
 type Cache struct{
@@ -23,7 +27,11 @@ func NewCache() Cache{
 }
 
 func NewQueue() Queue{
-	
+	head := &Node{}
+	tail := &Node{}
+
+	head.Right = tail
+	tail.Left = head
 }
 
 type Hash map[string]*Node
